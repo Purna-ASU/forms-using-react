@@ -8,7 +8,8 @@ function App() {
     lastName: "",
     email: "",
     comments: "",
-    isFriendly: true
+    isFriendly: true,
+    employment: ""
   })
   console.log(formData)
   function handleChange(event) {
@@ -29,6 +30,19 @@ function App() {
       <textarea placeholder='Comments' onChange={handleChange} name='comments' value={formData.comments}/>
       <input type='checkbox' onChange={handleChange} name='isFriendly' id='isFriendly' checked={formData.isFriendly} />
       <label htmlFor='isFriendly'>is Friendly?</label>
+      <br />
+      <fieldset>
+        <legend>Current Employment Status</legend>
+        <input type='radio' id='unemployed' onChange={handleChange} name='employment' value="unemployed"/>
+        <label htmlFor='unemployed'>Unemployed</label>
+        <br/>
+        <input type='radio' id='part-time' onChange={handleChange} name='employment' value="part-time"/>
+        <label htmlFor='part-time'>Part Time</label>
+        <br/>
+        <input type='radio' id='full-time' onChange={handleChange} name='employment' value="full-time"/>
+        <label htmlFor='full-time'>Full Time</label>
+        <br/>
+      </fieldset>
     </form>
   )
 }
